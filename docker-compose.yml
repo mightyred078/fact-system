@@ -15,4 +15,4 @@ services:
     volumes:
       - ./data:/app/data
     ports:
-      - "3000:3000"
+      - "3100:3000"
