@@ -112,8 +112,8 @@ router.post('/orders', async (req, res) => {
     const { customer_name, customer_phone, customer_email, slot_id, payment_method, items, notes } =
       req.body;
 
-    if (!customer_name || !customer_phone) {
-      return res.status(400).json({ error: 'Name and phone are required.' });
+    if (!customer_name || !customer_phone || !customer_email) {
+      return res.status(400).json({ error: 'Name, phone, and email are required.' });
     }
     if (!slot_id) {
       return res.status(400).json({ error: 'Please choose a pickup slot.' });
