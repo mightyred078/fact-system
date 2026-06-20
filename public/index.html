@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fourth Avenue Coffee & Tea — Order for pickup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="eyebrow">Fourth Avenue Coffee &amp; Tea</div>
+  <h1 class="site-title">FACT</h1>
+  <div class="site-tagline">Order ahead. Skip the queue. Pick up at our door.</div>
+</header>
+
+<main class="page">
+
+  <!-- ============ MENU VIEW ============ -->
+  <section id="view-menu">
+    <div class="tabs" id="category-tabs"></div>
+    <div id="menu-list"></div>
+
+    <p class="center" style="margin-top: 28px;">
+      <a href="#" id="track-link" class="muted">Already ordered? Track your order →</a>
+    </p>
+  </section>
+
+  <!-- ============ ITEM DETAIL (inline expand handled in JS within menu-list) ============ -->
+
+  <!-- ============ CHECKOUT VIEW ============ -->
+  <section id="view-checkout" class="hidden">
+    <h2 class="menu-section-title">Choose pickup time</h2>
+    <div id="checkout-banner"></div>
+    <div class="day-list" id="day-list"></div>
+    <div class="slot-grid" id="slot-grid"></div>
+
+    <h2 class="menu-section-title">Your details</h2>
+    <div class="field">
+      <label for="cust-name">Name</label>
+      <input id="cust-name" type="text" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label for="cust-phone">Phone number</label>
+      <input id="cust-phone" type="tel" autocomplete="tel" required>
+    </div>
+    <div class="field">
+      <label for="cust-email">Email (for your confirmation — optional)</label>
+      <input id="cust-email" type="email" autocomplete="email">
+    </div>
+    <div class="field">
+      <label for="cust-notes">Order notes (optional)</label>
+      <textarea id="cust-notes" rows="2"></textarea>
+    </div>
+
+    <h2 class="menu-section-title">Payment</h2>
+    <div class="field">
+      <div class="variant-options">
+        <button type="button" class="variant-pill selected" data-pay="pickup">Pay on pickup</button>
+        <button type="button" class="variant-pill" data-pay="paynow">PayNow QR now</button>
+      </div>
+    </div>
+
+    <div class="ticket" style="border-radius: 10px; margin-top: 20px;">
+      <div class="ticket-body" id="checkout-summary"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-secondary" id="back-to-menu">← Back to menu</button>
+      <button class="btn-primary" id="place-order-btn">Place order</button>
+    </div>
+  </section>
+
+  <!-- ============ CONFIRMATION VIEW ============ -->
+  <section id="view-confirmation" class="hidden">
+    <h2 class="menu-section-title">Order placed 🎉</h2>
+    <div class="ticket-perforation"></div>
+    <div class="ticket">
+      <div class="ticket-body" id="confirmation-ticket"></div>
+    </div>
+    <div id="confirmation-qr" class="qr-wrap hidden"></div>
+    <div class="btn-row">
+      <button class="btn-primary" id="new-order-btn">Place another order</button>
+    </div>
+  </section>
+
+  <!-- ============ TRACK VIEW ============ -->
+  <section id="view-track" class="hidden">
+    <h2 class="menu-section-title">Track your order</h2>
+    <div id="track-banner"></div>
+    <div class="field">
+      <label for="track-code">Order reference</label>
+      <input id="track-code" type="text" placeholder="FACT-XXXXX">
+    </div>
+    <div class="field">
+      <label for="track-phone">Phone number used when ordering</label>
+      <input id="track-phone" type="tel">
+    </div>
+    <button class="btn-primary" id="track-btn">Check status</button>
+    <div id="track-result" style="margin-top: 18px;"></div>
+    <p class="center" style="margin-top: 20px;"><a href="#" id="back-to-menu-from-track" class="muted">← Back to menu</a></p>
+  </section>
+
+</main>
+
+<!-- ============ CART BAR ============ -->
+<div class="cart-bar hidden" id="cart-bar">
+  <span id="cart-summary">0 items — $0.00</span>
+  <button id="review-order-btn">Review order</button>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

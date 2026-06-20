@@ -1,0 +1,5 @@
+# DOMAIN is supplied as an environment variable (set it in Portainer's
+# stack environment variables, or in your .env file if running via CLI).
+{$DOMAIN} {
+  reverse_proxy app:3000
+}

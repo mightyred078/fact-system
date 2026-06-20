@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FACT — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="eyebrow">Fourth Avenue Coffee &amp; Tea</div>
+  <h1 class="site-title" style="font-size: 32px;">Admin</h1>
+</header>
+
+<!-- ============ LOGIN ============ -->
+<div class="login-shell" id="login-shell">
+  <div id="login-banner"></div>
+  <div class="field">
+    <label for="login-username">Username</label>
+    <input id="login-username" type="text" autocomplete="username">
+  </div>
+  <div class="field">
+    <label for="login-password">Password</label>
+    <input id="login-password" type="password" autocomplete="current-password">
+  </div>
+  <button class="btn-primary" id="login-btn">Log in</button>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div class="admin-shell hidden" id="dashboard-shell">
+  <div class="admin-nav">
+    <button data-tab="orders" class="active">Orders</button>
+    <button data-tab="menu">Menu</button>
+    <button data-tab="slots">Pickup slots</button>
+    <button id="logout-btn" style="margin-left:auto;">Log out</button>
+  </div>
+
+  <!-- ORDERS TAB -->
+  <section id="tab-orders">
+    <div class="row-flex" style="margin-bottom:14px;">
+      <div class="field" style="margin-bottom:0;">
+        <label for="orders-date-filter">Date</label>
+        <input type="date" id="orders-date-filter">
+      </div>
+      <div class="field" style="margin-bottom:0;">
+        <label for="orders-status-filter">Status</label>
+        <select id="orders-status-filter">
+          <option value="">All</option>
+          <option value="pending">Pending</option>
+          <option value="paid">Paid</option>
+          <option value="fulfilled">Fulfilled</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+      <div class="field" style="margin-bottom:0; display:flex; align-items:flex-end;">
+        <button class="btn-secondary" id="orders-refresh-btn">Refresh</button>
+      </div>
+    </div>
+    <div id="orders-list"></div>
+  </section>
+
+  <!-- MENU TAB -->
+  <section id="tab-menu" class="hidden">
+    <div id="menu-admin-list"></div>
+    <button class="btn-secondary" id="add-menu-item-btn" style="margin-top:10px;">+ Add menu item</button>
+    <div id="menu-item-form-wrap"></div>
+  </section>
+
+  <!-- SLOTS TAB -->
+  <section id="tab-slots" class="hidden">
+    <div class="admin-card">
+      <h3 style="margin-top:0;">Add a pickup slot</h3>
+      <div class="row-flex">
+        <div class="field"><label>Date</label><input type="date" id="slot-date"></div>
+        <div class="field"><label>Start time</label><input type="time" id="slot-start"></div>
+        <div class="field"><label>End time</label><input type="time" id="slot-end"></div>
+      </div>
+      <div class="row-flex">
+        <div class="field"><label>Max orders (0 = unlimited)</label><input type="number" id="slot-max-orders" value="0" min="0"></div>
+        <div class="field"><label>Max items (0 = unlimited)</label><input type="number" id="slot-max-items" value="0" min="0"></div>
+      </div>
+      <button class="btn-primary" id="add-slot-btn">Add slot</button>
+      <div id="slot-form-banner"></div>
+    </div>
+    <div id="slots-list"></div>
+  </section>
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
