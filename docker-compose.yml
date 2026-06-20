@@ -14,25 +14,5 @@ services:
       PAYNOW_MERCHANT_NAME: ${PAYNOW_MERCHANT_NAME}
     volumes:
       - ./data:/app/data
-    expose:
-      - "3000"
-
-  caddy:
-    image: caddy:2-alpine
-    container_name: fact-caddy
-    restart: unless-stopped
-    environment:
-      - DOMAIN=${DOMAIN}
     ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - app
-
-volumes:
-  caddy_data:
-  caddy_config:
+      - "3000:3000"
