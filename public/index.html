@@ -47,8 +47,8 @@
       <input id="cust-phone" type="tel" autocomplete="tel" required>
     </div>
     <div class="field">
-      <label for="cust-email">Email (for your confirmation — optional)</label>
-      <input id="cust-email" type="email" autocomplete="email">
+      <label for="cust-email">Email (for your order confirmation)</label>
+      <input id="cust-email" type="email" autocomplete="email" required>
     </div>
     <div class="field">
       <label for="cust-notes">Order notes (optional)</label>
@@ -82,35 +82,4 @@
     </div>
     <div id="confirmation-qr" class="qr-wrap hidden"></div>
     <div class="btn-row">
-      <button class="btn-primary" id="new-order-btn">Place another order</button>
-    </div>
-  </section>
-
-  <!-- ============ TRACK VIEW ============ -->
-  <section id="view-track" class="hidden">
-    <h2 class="menu-section-title">Track your order</h2>
-    <div id="track-banner"></div>
-    <div class="field">
-      <label for="track-code">Order reference</label>
-      <input id="track-code" type="text" placeholder="FACT-XXXXX">
-    </div>
-    <div class="field">
-      <label for="track-phone">Phone number used when ordering</label>
-      <input id="track-phone" type="tel">
-    </div>
-    <button class="btn-primary" id="track-btn">Check status</button>
-    <div id="track-result" style="margin-top: 18px;"></div>
-    <p class="center" style="margin-top: 20px;"><a href="#" id="back-to-menu-from-track" class="muted">← Back to menu</a></p>
-  </section>
-
-</main>
-
-<!-- ============ CART BAR ============ -->
-<div class="cart-bar hidden" id="cart-bar">
-  <span id="cart-summary">0 items — $0.00</span>
-  <button id="review-order-btn">Review order</button>
-</div>
-
-<script src="/js/app.js"></script>
-</body>
-</html>
+      <button class="btn-primary"
