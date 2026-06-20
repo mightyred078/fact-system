@@ -316,6 +316,7 @@
 
     if (state.cart.length === 0) return setBanner(banner, 'Your order is empty.');
     if (!name || !phone) return setBanner(banner, 'Please enter your name and phone number.');
+    if (!email) return setBanner(banner, 'Please enter your email so we can send your order confirmation.');
     if (!state.selectedSlotId) return setBanner(banner, 'Please choose a pickup slot.');
 
     const payload = {
